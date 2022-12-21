@@ -9,10 +9,10 @@ function NavBar() {
         <nav className="navbar navbar-expand-lg bg-light">
             <div className="container">
                 <NavBrand />
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarScroll">
+                <div className="collapse navbar-collapse" id="navbarScroll">
                     <ul className="navbar-nav ms-auto mb-2 my-lg-0 navbar-nav-scroll">
                         <NavItem href="#">Inicio</NavItem>
                         <NavItem href="#">Nosotros</NavItem>

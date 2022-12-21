@@ -1,8 +1,7 @@
 import './App.css';
-import Card from "./componentes/Card/Card";
-import Button from "./componentes/Button/Button";
 import NavBar from './componentes/NavBar/NavBar';
 import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer";
+import CardsContainer from './componentes/CardsContainer/CardsContainer';
 
 
 function App() {
@@ -10,6 +9,7 @@ function App() {
     <div>
       <NavBar />
       <ItemListContainer greeting="¡Bienvenidos!"/>
+      <CardsContainer />
     </div>
   );
 }
