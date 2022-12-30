@@ -1,3 +1,5 @@
+import "bootstrap/dist/css/bootstrap.css"
+
 const NavItem = ({ href, children}) => {
     return (
         <li className="nav-item">

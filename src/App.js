@@ -1,15 +1,14 @@
 import './App.css';
 import NavBar from './componentes/NavBar/NavBar';
 import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer";
-import CardsContainer from './componentes/CardsContainer/CardsContainer';
-
+import ItemCount from './componentes/ItemCount/ItemCount';
 
 function App() {
   return (
     <div>
       <NavBar />
-      <ItemListContainer greeting="¡Bienvenidos!"/>
-      <CardsContainer />
+      <ItemListContainer />
+      <ItemCount stock={5} />
     </div>
   );
 }

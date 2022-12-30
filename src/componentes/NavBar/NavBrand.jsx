@@ -1,6 +1,8 @@
-function NavBrand() {
+import "bootstrap/dist/css/bootstrap.css"
+
+const NavBrand = () => {
     return(
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
             <p className="navbar-logo ms-3 my-auto fs-2">Akira</p>
         </a>
     )
