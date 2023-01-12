@@ -1,10 +1,11 @@
 import "bootstrap/dist/css/bootstrap.css"
-import "./card.css"
+import "./itemList.css"
 import Button from "../Button/Button"
+import { Link } from "react-router-dom"
 
-function Item(props) {
+function ItemList(props) {
 
-    const {nombre, img, precio} = props.producto
+    const {nombre, img, precio, id} = props.producto
 
     return (
         <div className="col card-container">
@@ -13,11 +14,13 @@ function Item(props) {
                             <div className="card-body detail-box">
                                 <p className="card-nombre">{nombre}</p>
                                 <p className="card-text price">${precio}</p>
-                                <Button>Agregar al carrito</Button>
+                                <Link to={`/item/${id}`}>
+                                    <Button>Agregar al carrito</Button>
+                                </Link>
                             </div>
             </div>
         </div>
     )
 }
 
-export default Item
+export default ItemList

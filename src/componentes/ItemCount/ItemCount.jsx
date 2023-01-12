@@ -1,4 +1,5 @@
 import {useState} from "react"
+import "bootstrap/dist/css/bootstrap.css"
 
 function ItemCount(props) {
     const [count, setCount] = useState(0)
@@ -12,9 +13,9 @@ function ItemCount(props) {
     }
 
     return (
-        <div>
+        <div className="d-flex justify-content-center">
             <button disabled={count === 0} onClick={handleSubstract}>-</button>
-            <p>{count}</p>
+            <p className="p-2">{count}</p>
             <button disabled={count === props.stock} onClick={handleAdd}>+</button>
         </div>
     )

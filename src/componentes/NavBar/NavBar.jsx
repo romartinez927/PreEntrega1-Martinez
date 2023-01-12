@@ -14,8 +14,10 @@ function NavBar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarScroll">
                     <ul className="navbar-nav ms-auto mb-2 my-lg-0 navbar-nav-scroll">
-                        <NavItem href="#">Inicio</NavItem>
-                        <NavItem href="#">Nosotros</NavItem>
+                        <NavItem href="/category/remeras">Remeras</NavItem>
+                        <NavItem href="/category/shorts">Shorts</NavItem>
+                        <NavItem href="/category/camperas">Camperas</NavItem>
+                        <NavItem href="/category/pantalones">Pantalones</NavItem>
                         <CartWidget />
                     </ul>
                 </div>
