@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.css"
 import ItemList from "./ItemList"
 import {obtenerProductos, filtrarPorCategoria} from "../../Productos/productos"
 import { useParams } from "react-router-dom"
+import Carrousel from "./Carrousel"
 
 function ItemListContainer() {
     const [productos, setProductos] = useState([]);
@@ -25,13 +26,16 @@ function ItemListContainer() {
         }, [categoryid]);
 
     return(
-        <div className="row row-cols-1 row-cols-md-2 g-4 justify-content-center text-center">
-            {productos.map((producto) => {
-                return (
-                    <ItemList id={producto.id} key={producto.id} producto={producto} />
-                )
-            })}
-        </div>
+        <>
+            <Carrousel />
+            <div className="row row-cols-1 row-cols-md-2 g-4 justify-content-center text-center">
+                {productos.map((producto) => {
+                    return (
+                        <ItemList id={producto.id} key={producto.id} producto={producto} />
+                    )
+                })}
+            </div>
+        </>
         )
 }
 

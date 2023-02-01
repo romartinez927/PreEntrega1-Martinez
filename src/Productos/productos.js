@@ -3,7 +3,7 @@ const productosDeRopa = [
         "id": 1, 
         "nombre": "Remera clásica", 
         "precio": 1200,  
-        "img":"./imagenes/card1.png", 
+        "img":"/imagenes/card1.png", 
         "categoria": "remeras",
         "stock": 5
     },
@@ -11,7 +11,7 @@ const productosDeRopa = [
         "id": 2, 
         "nombre": "Top Roger", 
         "precio": 1200,  
-        "img": "./imagenes/card2.jpeg", 
+        "img": "/imagenes/card2.jpeg", 
         "stock": 8,
         "categoria": "remeras"
     },
@@ -20,7 +20,7 @@ const productosDeRopa = [
         "id": 3, 
         "nombre": "Remera Gris",  
         "precio": 1500,  
-        "img": "./imagenes/card3.jpeg", 
+        "img": "/imagenes/card3.jpeg", 
         "stock": 5,
         "categoria": "remeras"
     },
@@ -28,7 +28,7 @@ const productosDeRopa = [
         "id": 4, 
         "nombre": "Short Delfi",
         "precio": 2500,  
-        "img": "./imagenes/card4.jpeg", 
+        "img": "/imagenes/card4.jpeg", 
         "stock": 9,
         "categoria": "shorts"
     },
@@ -36,7 +36,7 @@ const productosDeRopa = [
         "id": 5, 
         "nombre": "Short Calvin",  
         "precio": 2300, 
-        "img": "./imagenes/card5.jpeg", 
+        "img": "/imagenes/card5.jpeg", 
         "stock": 4,
         "categoria": "shorts"
     },
@@ -44,7 +44,7 @@ const productosDeRopa = [
         "id": 6, 
         "nombre": "Remera V",  
         "precio": 1200,  
-        "img":"./imagenes/card6.png", 
+        "img":"/imagenes/card6.png", 
         "stock": 5,
         "categoria": "remeras"
     },
@@ -52,7 +52,7 @@ const productosDeRopa = [
         "id": 7, 
         "nombre": "Short Negro", 
         "precio": 2100,  
-        "img": "./imagenes/card7.png", 
+        "img": "/imagenes/card7.png", 
         "stock": 9,
         "categoria": "shorts"
     },
@@ -61,7 +61,7 @@ const productosDeRopa = [
         "nombre": "Short Azul", 
         "precio": 2100, 
         "stock": 100, 
-        "img": "./imagenes/card8.jpeg", 
+        "img": "/imagenes/card8.jpeg", 
         "stock": 5,
         "categoria": "shorts"
     },       
@@ -69,7 +69,7 @@ const productosDeRopa = [
         "id": 9, 
         "nombre": "Campera Negra", 
         "precio": 2500, 
-        "img": "./imagenes/card9.jpeg", 
+        "img": "/imagenes/card9.jpeg", 
         "stock": 4,
         "categoria": "camperas"
     },    
@@ -77,7 +77,7 @@ const productosDeRopa = [
         "id": 10,
         "nombre": "Buzo Gris", 
         "precio": 1300, 
-        "img": "./imagenes/card10.jpeg", 
+        "img": "/imagenes/card10.jpeg", 
         "stock": 8,
         "categoria": "camperas"
     },   
@@ -85,7 +85,7 @@ const productosDeRopa = [
         "id": 11,
         "nombre": "Buzo Blanco", 
         "precio": 2200,  
-        "img": "./imagenes/card11.jpeg", 
+        "img": "/imagenes/card11.jpeg", 
         "stock": 7,
         "categoria": "camperas"
     },
@@ -93,7 +93,7 @@ const productosDeRopa = [
         "id": 12,
         "nombre": "Jogging rústico",
         "precio": 1500, 
-        "img": "./imagenes/card13.jpeg", 
+        "img": "/imagenes/card13.jpeg", 
         "stock": 5,
         "categoria": "pantalones"
     },
@@ -101,7 +101,7 @@ const productosDeRopa = [
         "id": 13,
         "nombre": "Pantalón Juno",
         "precio": 2300, 
-        "img": "./imagenes/card14.jpeg", 
+        "img": "/imagenes/card14.jpeg", 
         "stock": 5,
         "categoria": "pantalones"
     },
@@ -109,7 +109,7 @@ const productosDeRopa = [
         "id": 14,
         "nombre": "Jean Celeste",
         "precio": 2300, 
-        "img": "./imagenes/card15.jpeg", 
+        "img": "/imagenes/card15.jpeg", 
         "stock": 5,
         "categoria": "pantalones"
     },
@@ -117,7 +117,7 @@ const productosDeRopa = [
         "id": 15,
         "nombre": "Jean Negro",
         "precio": 2300,  
-        "img": "./imagenes/card16.jpeg", 
+        "img": "/imagenes/card16.jpeg", 
         "stock": 8,
         "categoria": "pantalones"
     },
@@ -125,7 +125,7 @@ const productosDeRopa = [
         "id": 16,
         "nombre": "Jean Azul",
         "precio": 2300,  
-        "img": "./imagenes/card17.jpeg", 
+        "img": "/imagenes/card17.jpeg", 
         "stock": 5,
         "categoria": "pantalones"
     }

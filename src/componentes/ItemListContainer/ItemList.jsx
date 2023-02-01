@@ -13,9 +13,9 @@ function ItemList(props) {
             <img src={img} className="card-img-top" alt={nombre}/>
                             <div className="card-body detail-box">
                                 <p className="card-nombre">{nombre}</p>
-                                <p className="card-text price">${precio}</p>
+                                <h5 className="card-text price">${precio}</h5>
                                 <Link to={`/item/${id}`}>
-                                    <Button>Agregar al carrito</Button>
+                                    <Button>Ver producto</Button>
                                 </Link>
                             </div>
             </div>

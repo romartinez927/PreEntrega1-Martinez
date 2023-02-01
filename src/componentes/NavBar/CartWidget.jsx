@@ -1,12 +1,19 @@
 import NavItem from "./NavItem"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCartShopping} from "@fortawesome/free-solid-svg-icons"
+import { useContext } from "react"
+import {cartContext} from "../../storage/cartContext"
 
-const CartWidget = () => {
+function CartWidget() {
+    const {cart, getTotalItemsInCart} = useContext(cartContext)
+
     return (
-        <NavItem href="/">
+        <NavItem href="/cart">
             <FontAwesomeIcon icon={faCartShopping}/>
-            <span className="badge bg-primary">0</span>
+            {cart.length > 0 ? (
+                <span className="badge bg-primary">{getTotalItemsInCart()}</span>
+            ) : <></>}
+            
         </NavItem>
     )
 }

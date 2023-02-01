@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css"
 import "@popperjs/core"
 import NavBrand from "./NavBrand";
 
+
 function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg bg-light">
