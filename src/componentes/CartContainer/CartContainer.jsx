@@ -1,16 +1,16 @@
 import "bootstrap/dist/css/bootstrap.css"
 import "./cartContainer.css"
 import { cartContext } from "../../storage/cartContext"
-import { Link } from "react-router-dom"
-import { doc, getDoc, getDocs, getFirestore, collection} from "firebase/firestore"
-import { useEffect, useState, useContext } from "react"
+import { Link} from "react-router-dom"
+import { useEffect, useContext } from "react"
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Button from "../Button/Button"
+import { createOrder } from "../../storage/firebase"
+import Swal from 'sweetalert2'
+import Checkout from "../Checkout/Checkout"
 
 export default function CartContainer() {
-    const {cart, setCart, removeItem, clearLocalStorage} = useContext(cartContext)
-    const total = cart.reduce ((acc, el) => acc + el.precio * el.cantidad, 0)
+    const {cart, setCart, removeItem, getTotalPriceInCart} = useContext(cartContext)
 
     useEffect(() => {
         const carrito = JSON.parse(localStorage.getItem("productosEnCarrito"))
@@ -18,26 +18,6 @@ export default function CartContainer() {
             setCart(carrito)
         }
     }, [])
-// useEffect(() => {
-//     const db = getFirestore()
-
-//     // const productoRopa = doc(db, "productos", "2stG2vQbSOq28R46JakO")
-    
-//     // getDoc(productoRopa).then((snapshot) => {
-//     //     if (snapshot.exists()) {
-//     //         console.log(snapshot.data())
-//     //     }
-//     //     })
-
-//     const productosRopa = collection(db, "productos")
-
-//     getDocs(productosRopa).then((snapshot) => {
-//         if(snapshot.size === 0) {
-//             console.log("no se encuentran productos")
-//         }
-//         return console.log(snapshot.docs.map((doc) => doc.data()))
-//     })
-// }, [])
 
     return (
         <>
@@ -82,8 +62,9 @@ export default function CartContainer() {
         <div className="text-center pt-5">
             {cart.length > 0 ? (
                 <>
-                    <p>Total: ${total}</p>
-                    <Button onClick={() => clearLocalStorage()}>Finalizar compra</Button>
+                    <p>Total: ${getTotalPriceInCart()}</p>
+                    <Link className="btn btn-light" to="/formularioCompra">Continuar compra</Link>
+                    {/* <button onClick={handleCheckout}>Finalizar compra</button> */}
                 </>
             )
             : (<></>)

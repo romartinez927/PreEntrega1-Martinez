@@ -6,7 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from './storage/cartContext';
 import CartContainer from './componentes/CartContainer/CartContainer';
 import Footer from "./componentes/Footer/Footer"
-import app from "./storage/firebase"
+import PageNotFound from './componentes/PageNotFound/PageNotFound';
+import Checkout from './componentes/Checkout/Checkout';
 
 function App() {
   return (
@@ -16,8 +17,10 @@ function App() {
           <Routes>
             <Route path="/" element={ <ItemListContainer />} />
             <Route path="/cart" element={ <CartContainer/> } />
-            <Route path="/category/:categoryid" element={ <ItemListContainer />} />
-            <Route path="/item/:itemid" element={ <ItemDetailContainer /> } />
+            <Route path="/category/:categoryid" element={ <ItemListContainer/>} />
+            <Route path="/item/:itemid" element={ <ItemDetailContainer/> } />
+            <Route path="/formularioCompra" element={ <Checkout/> } />
+            <Route path="*" element={ <PageNotFound/> }/>
           </Routes>
           <Footer />
         </CartProvider>

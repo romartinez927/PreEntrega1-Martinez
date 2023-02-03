@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.css"
 import { useEffect, useState, useContext } from "react"
-import {obtenerProducto}  from "../../Productos/productos"
+import {obtenerProducto}  from "../../storage/firebase"
 import ItemDetail from "./ItemDetail"
 import {useParams} from "react-router-dom"
 import {cartContext} from "../../storage/cartContext"

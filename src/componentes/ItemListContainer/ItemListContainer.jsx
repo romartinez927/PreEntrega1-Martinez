@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import "bootstrap/dist/css/bootstrap.css"
 import ItemList from "./ItemList"
-import {obtenerProductos, filtrarPorCategoria} from "../../Productos/productos"
+import {obtenerProductos, filtrarPorCategoria} from "../../storage/firebase"
 import { useParams } from "react-router-dom"
 import Carrousel from "./Carrousel"
 

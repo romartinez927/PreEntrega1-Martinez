@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Akira Indumentaria
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue armado para el curso de ReactJS de Coderhouse.
 
 ## Available Scripts
 

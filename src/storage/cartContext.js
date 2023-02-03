@@ -39,9 +39,14 @@ function CartProvider(props) {
     function getTotalItemsInCart() {
         return cart.length;
     }
+
+    function getTotalPriceInCart() {
+        const total = cart.reduce ((acc, el) => acc + el.precio * el.cantidad, 0)
+        return total
+    }
     
     return (
-        <cartContext.Provider value={{cart, addToCart, getTotalItemsInCart, removeItem, setCart, clearLocalStorage}}>
+        <cartContext.Provider value={{cart, addToCart, getTotalItemsInCart, removeItem, setCart, clearLocalStorage, getTotalPriceInCart}}>
             {props.children}
         </cartContext.Provider>
     )
