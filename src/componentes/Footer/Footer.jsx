@@ -12,14 +12,7 @@ export default function Footer(){
                 <a href="/"><FontAwesomeIcon icon={faInstagram} /></a>
                 <a href="/"><FontAwesomeIcon icon={faWhatsapp}/></a>
             </div>
-            <ul className="list-inline">
-                <li className="list-inline-item"><a href="#">Home</a></li>
-                <li className="list-inline-item"><a href="#">Services</a></li>
-                <li className="list-inline-item"><a href="#">About</a></li>
-                <li className="list-inline-item"><a href="#">Terms</a></li>
-                <li className="list-inline-item"><a href="#">Privacy Policy</a></li>
-            </ul>
-            <p className="copyright">Akira © 2022</p>
+            <p className="copyright">Akira © 2023</p>
         </footer>
     </div>
     )

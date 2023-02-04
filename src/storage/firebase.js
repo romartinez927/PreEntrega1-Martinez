@@ -21,7 +21,7 @@ export async function exportarArray() {
         "precio": 1200,  
         "img":"/imagenes/card1.png", 
         "categoria": "remeras",
-        "stock": 5
+        "stock": 5,
     },
     {
         "id": 2, 
@@ -29,7 +29,7 @@ export async function exportarArray() {
         "precio": 1200,  
         "img": "/imagenes/card2.jpeg", 
         "stock": 8,
-        "categoria": "remeras"
+        "categoria": "remeras",
     },
     
     {
@@ -38,7 +38,7 @@ export async function exportarArray() {
         "precio": 1500,  
         "img": "/imagenes/card3.jpeg", 
         "stock": 5,
-        "categoria": "remeras"
+        "categoria": "remeras",
     },
     {
         "id": 4, 
@@ -78,7 +78,7 @@ export async function exportarArray() {
         "precio": 2100, 
         "stock": 100, 
         "img": "/imagenes/card8.jpeg", 
-        "stock": 5,
+        "stock": 11,
         "categoria": "shorts"
     },       
     {
@@ -146,11 +146,9 @@ export async function exportarArray() {
         "categoria": "pantalones"
     }
   ]
-
   for (let productoRopa of productosDeRopa) {
     delete(productoRopa.id)
-    addDoc (collection(db, "productos"), productoRopa).then((respuesta) => 
-      console.log(respuesta.id))
+    addDoc (collection(db, "productos"), productoRopa)
   }
 }
 
@@ -167,36 +165,27 @@ export async function obtenerProductos() {
 }
 
 export async function obtenerProducto(idUrl) {
-  const productosRopa = collection(db, "productos");
-  const docRef = doc(productosRopa, idUrl);
-  const snapshot = await getDoc(docRef);
-  return { ...snapshot.data(), id: snapshot.id };
+  const productosRopa = collection(db, "productos")
+  const docRef = doc(productosRopa, idUrl)
+  const snapshot = await getDoc(docRef)
+  return { ...snapshot.data(), id: snapshot.id }
 }
 
 export async function filtrarPorCategoria(categoriaUrl) {
-  const productosRopa = collection(db, "productos");
-
-  const q = query(productosRopa, where("categoria", "==", categoriaUrl));
-
-  const snapshot = await getDocs(q);
-
+  const productosRopa = collection(db, "productos")
+  const q = query(productosRopa, where("categoria", "==", categoriaUrl))
+  const snapshot = await getDocs(q)
   const productos = snapshot.docs.map((elem) => {
-    let producto = elem.data();
-    producto.id = elem.id;
-    return producto;
-  });
-
-  return productos;
+    let producto = elem.data()
+    producto.id = elem.id
+    return producto
+  })
+  return productos
 }
 
 export async function createOrder(order) {
   const orderRef = collection( db, "order" )
-  // addDoc( orderRef, order ).then( respuesta => {
-  //   console.log(respuesta)
-  //   console.log(respuesta.id)
-  // })
   let respuesta = await addDoc( orderRef, order)
-  console.log(respuesta, respuesta.id)
   return respuesta.id
 }
 

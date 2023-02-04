@@ -4,7 +4,7 @@ import "./itemCount.css"
 
 function ItemCount({onAddToCart, stock}) {
     const [cantidad, setCantidad] = useState(1)
-
+ 
     function handleAdd() {
         setCantidad(cantidad + 1)
     }
@@ -14,7 +14,6 @@ function ItemCount({onAddToCart, stock}) {
     }
 
     return (
-        <>
             <div className="d-flex justify-content-evenly pt-4">
                 <div className="col-3 p-1 d-flex justify-content-center my-auto btn-contador-container">
                     <button className="btn-contador" disabled={cantidad === 0} onClick={handleSubstract}>-</button>
@@ -27,7 +26,6 @@ function ItemCount({onAddToCart, stock}) {
                     </button>
                 </div>
             </div>
-        </>
     )
 }
 

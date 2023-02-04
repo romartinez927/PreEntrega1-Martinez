@@ -21,7 +21,6 @@ export default function ItemDetailContainer() {
             .then((respuesta) => {
                 setProducto(respuesta)
             })
-            .catch((error) => console.log(error))
     }, [])
 
     return (

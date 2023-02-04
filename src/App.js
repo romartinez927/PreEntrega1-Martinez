@@ -8,6 +8,7 @@ import CartContainer from './componentes/CartContainer/CartContainer';
 import Footer from "./componentes/Footer/Footer"
 import PageNotFound from './componentes/PageNotFound/PageNotFound';
 import Checkout from './componentes/Checkout/Checkout';
+import DetalleCompra from './componentes/Checkout/DetalleCompra';
 
 function App() {
   return (

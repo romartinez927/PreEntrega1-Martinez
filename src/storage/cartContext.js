@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 export const cartContext = createContext({ cart: [] })
 
@@ -14,25 +15,64 @@ function CartProvider(props) {
     }, [cart])
 
     function clearLocalStorage() {
+        setCart([]) 
         return localStorage.clear()
     }
 
     function addToCart(item) {
-        let isInCart = cart.findIndex((itemInCart) => itemInCart.id === item.id)
+        let index = cart.findIndex((itemInCart) => itemInCart.id === item.id)
         let newCart = cart.map((item) => item)
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'bottom-end',
+            showConfirmButton: false,
+            timer: 1000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
 
-        if (isInCart !== -1) {
-            console.log("item ya agregado")
+        if (index !== -1) {
+            // let cant = item.cantidad
+            // newCart[index].cant += cant
+            // console.log(newCart)
+            // setCart(newCart)
+            Toast.fire({
+                icon: 'success',
+                title: 'Producto agregado al carrito'
+                })
         } else {
+            Toast.fire({
+            icon: 'success',
+            title: 'Producto agregado al carrito'
+            })
             newCart.push(item)
             setCart(newCart)
         }
     }
+    
 
     function removeItem(producto) {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
         const results = cart.filter(
             item => item.id !== producto.id
         )
+        Toast.fire({
+            icon: 'error',
+            title: 'Producto eliminado del carrito'
+            })
         setCart(results)
     }
 

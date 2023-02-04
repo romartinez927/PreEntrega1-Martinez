@@ -5,8 +5,11 @@ import { createOrder } from "../../storage/firebase"
 import Swal from 'sweetalert2'
 import { useContext } from "react"
 import { cartContext } from "../../storage/cartContext"
+import { Link } from "react-router-dom"
+import DetalleCompra from "./DetalleCompra"
+import "./detalleCompra.css"
 
-export default function Checkout(props) {
+export default function Checkout() {
     const {cart, clearLocalStorage, getTotalPriceInCart} = useContext(cartContext)
     const [userData, setUserData] = useState({
         nombre: "",
@@ -27,7 +30,6 @@ export default function Checkout(props) {
 
     function onSubmit(evt) {
         evt.preventDefault();
-        console.log(`Gracias por tu compra!`);
     }
 
     function formIsInvalid() {
@@ -39,8 +41,6 @@ export default function Checkout(props) {
     }
 
     function handleCheckout() {
-        evt.preventDefault()
-
         const items = cart.map(({ id, precio, nombre, cantidad }) => ({ id, precio, nombre, cantidad}))
 
         const ordenDeCompra = {
@@ -53,17 +53,19 @@ export default function Checkout(props) {
         createOrder(ordenDeCompra).then((id) => {
             Swal.fire({
                 icon: 'success',
-                title: 'Oops...',
-                text: 'Something went right!',
-                footer: `<p>${id}</p>`
+                title: 'Compra realizada!',
+                footer: `<p>El id de su compra es: ${id}</p>`,
+                showConfirmButton: false
          })
+   
         })
-        clearLocalStorage()        
+        clearLocalStorage()
+      
     }
 
     return (
-        <div className="row justify-content-center py-5">
-            <form onSubmit={onSubmit} className="bg-light col-7 py-5 text-center">
+        <div className="row justify-content-evenly py-5" >
+            <form onSubmit={onSubmit} className="bg-light form-checkout col-6 py-5 text-center">
                 <h2>Completa tus datos para finalizar la compra</h2>
                 {fieldsForm.map((field) => (
                     <InputForm
@@ -72,17 +74,14 @@ export default function Checkout(props) {
                         onChange={onInputChange}
                         label={field}
                         userData={userData}
+                        key={field}
                     />
                 ))}
-                <button
-                    onClick={handleCheckout}
-                    className="btn"
-                    disabled={formIsInvalid()}
-                    type="submit"
-                >
+                <Link to="/" onClick={handleCheckout} className="btn btn-light" disabled={formIsInvalid()} type="submit">
                     Finalizar compra
-                </button>
+                </Link>
             </form>
+            <DetalleCompra />
         </div>
     )
 }
