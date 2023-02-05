@@ -10,7 +10,7 @@ export default function ItemDetailContainer() {
     let params = useParams()
 
     const { addToCart } = useContext(cartContext)
-
+    
     function handleAddToCart(cantidad) {
         const productoAndCantidad = { ...producto, cantidad: cantidad}
         addToCart(productoAndCantidad)

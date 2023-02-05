@@ -20,7 +20,7 @@ Esta es una lista de las teconologias que utilice para realizar el proyecto:
 
 Clonar el proyecto y entrar en el directorio:
 
-- git clone https://github.com/romartinez927/PreEntrega2--Martinez.git
+- git clone https://github.com/romartinez927/ProyectoFinal--Martinez.git
 - cd akira-react
 
 Instalar las dependencias:

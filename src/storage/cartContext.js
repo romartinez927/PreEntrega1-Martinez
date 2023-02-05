@@ -35,10 +35,6 @@ function CartProvider(props) {
           })
 
         if (index !== -1) {
-            // let cant = item.cantidad
-            // newCart[index].cant += cant
-            // console.log(newCart)
-            // setCart(newCart)
             Toast.fire({
                 icon: 'success',
                 title: 'Producto agregado al carrito'

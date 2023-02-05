@@ -15,7 +15,7 @@ export default function DetalleCompra() {
                     return(
                         <div className="d-flex align-items-center py-2" key={producto.nombre}>
                             <div className="col">
-                                <img src={producto.img} className="img-detalle"/>
+                                <img src={producto.img} alt={producto.nombre} className="img-detalle"/>
                             </div>
                             <div className="col">
                                 <p>{producto.nombre}</p>
